@@ -68,6 +68,26 @@
     .schedule-link { color: var(--white); font-weight: 700; white-space: nowrap; border-bottom: 1px solid rgba(187,12,12,0.8); }
     .schedule-link:hover { color: var(--red); }
 
+    .btn {
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--red);
+      padding: 14px 26px;
+      border-radius: 3px;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-note {
+      margin-top: 14px;
+      font-size: 0.78rem;
+      color: var(--silver-mute);
+      letter-spacing: 0.04em;
+    }
+
     /* ── PAGE HEADER (inner pages) ───────────────────────────────── */
     .pagehead {
       padding: 140px 0 56px;
@@ -737,6 +757,8 @@
       .dv-lineup span { min-width: 0; margin-right: 8px; }
     }
     @media (max-width: 520px) {
+      .nav-wordmark { display: none; }
+      .nav-links { gap: 12px; }
       .hero-stats { gap: 24px; }
       .story-stats { grid-template-columns: 1fr 1fr; }
       .team-photo-grid img:first-child { aspect-ratio: 4/3; }
@@ -755,6 +777,8 @@
     <div class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="results.html">Results</a>
+      <a href="sponsorship.html">Sponsorship</a>
+      <a href="https://instagram.com/hkpcallblacks" target="_blank" rel="noopener">IG</a>
     </div>
   </nav>
 
