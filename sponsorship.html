@@ -148,20 +148,6 @@
       vertical-align: middle;
       margin-right: 12px;
     }
-    .hero-h1 {
-      font-family: Arial, sans-serif;
-      font-weight: 900;
-      font-size: clamp(3.5rem, 10vw, 8rem);
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 24px;
-    }
-    .hero-h1 em {
-      font-style: normal;
-      color: var(--red);
-    }
     .hero-tagline {
       font-size: clamp(1rem, 2vw, 1.25rem);
       color: var(--silver);
@@ -439,7 +425,6 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
-    .footer-brand span { color: var(--red); }
     .footer-meta {
       font-size: 0.78rem;
       color: var(--silver-mute);
@@ -805,6 +790,20 @@
       margin-right: 6px;
     }
 
+    .hero-logo {
+      margin-bottom: 26px;
+    }
+    .hero-logo img {
+      width: min(520px, 78vw);
+      height: auto;
+      display: block;
+    }
+    .footer-brand img {
+      width: 156px;
+      height: auto;
+      display: block;
+    }
+
     /* ── MOBILE ──────────────────────────────────────────────────── */
     @media (max-width: 860px) {
       .team-layout,
@@ -1047,7 +1046,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">HKPC <span>All Blacks</span></div>
+      <div class="footer-brand"><img src="images/allblacks/logo-lockup-silver.png" alt="HKPC All Blacks"></div>
       <div class="footer-meta">Est. 2026 · Hell's Kitchen, Manhattan · 2–0</div>
     </div>
   </footer>
