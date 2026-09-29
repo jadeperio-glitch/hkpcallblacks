@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sponsorship — HKPC All Blacks</title>
-  <meta name="description" content="Partner with the HKPC All Blacks — jersey, court, venue and social activations across the season.">
+  <meta name="description" content="Partner with the HKPC All Blacks — jersey, court, broadcast and venue activations across the 2026 season. Founding, Court and Supporter tiers.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Arial+Black&display=swap" rel="stylesheet">
   <style>
@@ -726,6 +726,85 @@
       vertical-align: 1px;
     }
 
+    /* ── SPONSORSHIP ─────────────────────────────────────────────── */
+    .bracket-copy {
+      font-size: 0.85rem;
+      color: var(--silver);
+      line-height: 1.6;
+    }
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1px;
+      background: rgba(167,169,172,0.16);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+    .tier { background: var(--card); padding: 28px 24px; }
+    .tier-name {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+    .tier-price {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--red);
+      margin: 12px 0 2px;
+    }
+    .tier-per {
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver-mute);
+    }
+    .tier-seats {
+      margin-top: 8px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .tier-list {
+      list-style: none;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(167,169,172,0.2);
+    }
+    .tier-list li {
+      position: relative;
+      padding: 7px 0 7px 16px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      color: var(--silver);
+    }
+    .tier-list li::before {
+      content: 'B8';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      font-size: 0.7rem;
+      color: var(--red);
+    }
+    .risk {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--silver);
+    }
+    .risk b {
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-right: 6px;
+    }
+
     /* ── MOBILE ──────────────────────────────────────────────────── */
     @media (max-width: 860px) {
       .team-layout,
@@ -785,7 +864,7 @@
   <header class="pagehead">
     <div class="wrap">
       <h1>Partner with the <em>All Blacks</em></h1>
-      <p>NYC's most competitive amateur pickleball franchise &mdash; and the room that comes with it.</p>
+      <p>NYC&rsquo;s most competitive amateur pickleball franchise &mdash; and the room that comes with it.</p>
     </div>
   </header>
 
@@ -794,7 +873,7 @@
     <div class="wrap">
       <div class="eyebrow">The Case</div>
       <h2 class="section-h2">Not a logo placement.<br>A room worth being in.</h2>
-      <p class="section-lead">The All Blacks are a curated roster of accomplished New York operators, playing a full competitive season at a purpose-built Manhattan venue. Sponsorship buys presence on the court, in the room and in the feed.</p>
+      <p class="section-lead">A curated roster of accomplished New York operators, playing a full competitive season at a purpose-built Manhattan venue. Sponsorship buys presence on the court, in the room and in the feed.</p>
       <div class="story-stats">
         <div class="story-stat">
           <div class="val">2&ndash;0</div>
@@ -819,39 +898,104 @@
   <!-- WHAT YOU GET -->
   <section class="section story-section">
     <div class="wrap">
-      <div class="eyebrow">Activations</div>
-      <h2 class="section-h2">Everything at the venue<br>is sponsor-ready.</h2>
-      <p class="section-lead">Hell's Kitchen Pickleball Club was built for this &mdash; dedicated lighting, climate control and broadcast-ready infrastructure, with 200+ competitive members through the doors.</p>
-      <div class="court-facts">
-        <div class="court-fact">
-          <div class="court-fact-label">On the team</div>
-          <div class="court-fact-value">Jersey placement, front and sleeve</div>
+      <div class="eyebrow">What You Get</div>
+      <h2 class="section-h2">Where your brand<br>shows up. All season.</h2>
+      <div class="bracket-grid">
+        <div class="bracket">
+          <div class="bracket-head">Jersey</div>
+          <p class="bracket-copy">Logo on All Blacks jerseys &mdash; worn on court, in photos, on every broadcast.</p>
         </div>
-        <div class="court-fact">
-          <div class="court-fact-label">On the court</div>
-          <div class="court-fact-value">Court-side banners and scoreboard branding</div>
+        <div class="bracket">
+          <div class="bracket-head">On-Court Banners</div>
+          <p class="bracket-copy">Logo placement on court padding and entrance &mdash; every match, home and away.</p>
         </div>
-        <div class="court-fact">
-          <div class="court-fact-label">In the room</div>
-          <div class="court-fact-value">Team room and bar activation on match nights</div>
+        <div class="bracket">
+          <div class="bracket-head">Live Scoreboard</div>
+          <p class="bracket-copy">Branded scoreboard at every home match. Photographed every point.</p>
         </div>
-        <div class="court-fact">
-          <div class="court-fact-label">In the feed</div>
-          <div class="court-fact-value">Match recaps and social coverage across the season</div>
+        <div class="bracket">
+          <div class="bracket-head">Signature Cocktail</div>
+          <p class="bracket-copy">Co-developed drink served at every All Blacks event. Pioneered with Botanist.</p>
         </div>
-        <div class="court-fact">
-          <div class="court-fact-label">Season</div>
-          <div class="court-fact-value">Five match days, September to November, plus championship weekends</div>
+        <div class="bracket">
+          <div class="bracket-head">Team Room</div>
+          <p class="bracket-copy">Brand the All Blacks team room. Photo wall, signage, swag drops.</p>
+        </div>
+        <div class="bracket">
+          <div class="bracket-head">Email + Social</div>
+          <p class="bracket-copy">Logo on every pre-match email, recap post, and IG story. Season-long.</p>
+        </div>
+        <div class="bracket">
+          <div class="bracket-head">PodPlay App</div>
+          <p class="bracket-copy">Persistent digital placement across the All Blacks&rsquo; and HKPC&rsquo;s PodPlay presence.</p>
+        </div>
+        <div class="bracket">
+          <div class="bracket-head">Broadcast</div>
+          <p class="bracket-copy">Lower-third and end-card logo placement on every livestream and replay.</p>
+        </div>
+        <div class="bracket">
+          <div class="bracket-head">Community</div>
+          <p class="bracket-copy">Brand alignment with the Sunday Afternoons program &mdash; youth and mentorship.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROOF -->
+  <!-- TIERS -->
   <section class="section">
     <div class="wrap">
+      <div class="eyebrow">Sponsor Tiers</div>
+      <h2 class="section-h2">Three ways in.<br>Season-long.</h2>
+      <div class="tier-grid">
+        <div class="tier">
+          <div class="tier-name">Founding</div>
+          <div class="tier-price">$10K</div>
+          <div class="tier-per">per season</div>
+          <div class="tier-seats">Up to 3</div>
+          <ul class="tier-list">
+            <li>Founding Partner designation &mdash; all materials</li>
+            <li>Jersey placement</li>
+            <li>Banner and team room activation</li>
+            <li>Signature cocktail or featured activation</li>
+            <li>Email, recap and PodPlay placement</li>
+            <li>Right of first refusal &mdash; Yrs 1&ndash;3 and Tri-State</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="tier-name">Court</div>
+          <div class="tier-price">$5K</div>
+          <div class="tier-per">per season</div>
+          <div class="tier-seats">Up to 5</div>
+          <ul class="tier-list">
+            <li>Court-side banner placement</li>
+            <li>Drink ticket or snack activation</li>
+            <li>Logo on email and flyers</li>
+            <li>PodPlay app placement</li>
+            <li>Post-event analytics report</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="tier-name">Supporter</div>
+          <div class="tier-price">$2K</div>
+          <div class="tier-per">per season</div>
+          <div class="tier-seats">Open</div>
+          <ul class="tier-list">
+            <li>Logo on emails and flyers</li>
+            <li>PodPlay logo placement</li>
+            <li>Mention in match recaps</li>
+            <li>Founding Sponsor designation</li>
+          </ul>
+        </div>
+      </div>
+      <p class="risk"><b>Risk-free</b>First match unsatisfactory? Comped into the next event. We earn the rest of the season.</p>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="section story-section">
+    <div class="wrap">
       <div class="eyebrow">Proof</div>
-      <h2 class="section-h2">The Botanist got there first.</h2>
+      <h2 class="section-h2">The Botanist<br>got there first.</h2>
       <div class="story-layout">
         <div class="story-photo">
           <img src="images/allblacks/photo-bar.jpg" alt="The bar at HKPC on match night" loading="lazy">
@@ -866,11 +1010,11 @@
   </section>
 
   <!-- AUDIENCE -->
-  <section class="section story-section">
+  <section class="section">
     <div class="wrap">
       <div class="eyebrow">The Audience</div>
       <h2 class="section-h2">Who is actually<br>in the room.</h2>
-      <p class="section-lead">The roster's day jobs, and the networks that come with them.</p>
+      <p class="section-lead">The roster&rsquo;s day jobs, and the networks that come with them.</p>
       <div class="tags">
         <span class="tag">Medicine</span>
         <span class="tag">Litigation &amp; Corporate Law</span>
@@ -890,13 +1034,13 @@
   </section>
 
   <!-- ENQUIRE -->
-  <section class="section">
+  <section class="section story-section">
     <div class="wrap">
       <div class="eyebrow">Enquire</div>
-      <h2 class="section-h2">Let's talk.</h2>
-      <p class="section-lead">Packages are built around what a partner actually wants out of the season. Tell us what you have in mind.</p>
+      <h2 class="section-h2">Let&rsquo;s build.</h2>
+      <p class="section-lead">Founding seats are capped at three. Tell us what you want out of the season and we will shape the package around it.</p>
       <a class="btn" href="mailto:info@dinkdynamics.com?subject=All%20Blacks%20sponsorship">Email us</a>
-      <p class="btn-note">info@dinkdynamics.com &middot; Hell's Kitchen Pickleball Club, Manhattan</p>
+      <p class="btn-note">info@dinkdynamics.com &middot; Hell&rsquo;s Kitchen Pickleball Club, Manhattan</p>
     </div>
   </section>
 

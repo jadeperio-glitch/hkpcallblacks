@@ -726,6 +726,85 @@
       vertical-align: 1px;
     }
 
+    /* ── SPONSORSHIP ─────────────────────────────────────────────── */
+    .bracket-copy {
+      font-size: 0.85rem;
+      color: var(--silver);
+      line-height: 1.6;
+    }
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1px;
+      background: rgba(167,169,172,0.16);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+    .tier { background: var(--card); padding: 28px 24px; }
+    .tier-name {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver);
+    }
+    .tier-price {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--red);
+      margin: 12px 0 2px;
+    }
+    .tier-per {
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--silver-mute);
+    }
+    .tier-seats {
+      margin-top: 8px;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .tier-list {
+      list-style: none;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(167,169,172,0.2);
+    }
+    .tier-list li {
+      position: relative;
+      padding: 7px 0 7px 16px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      color: var(--silver);
+    }
+    .tier-list li::before {
+      content: 'B8';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      font-size: 0.7rem;
+      color: var(--red);
+    }
+    .risk {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--silver);
+    }
+    .risk b {
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-right: 6px;
+    }
+
     /* ── MOBILE ──────────────────────────────────────────────────── */
     @media (max-width: 860px) {
       .team-layout,
