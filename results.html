@@ -689,6 +689,101 @@
       width: 1%;
     }
     .gtable tr.w .res { color: var(--red); }
+    .div-chip.tie { border-color: rgba(167,169,172,0.5); }
+    .div-chip.tie .dc-score { color: var(--white); }
+    .results-section + .results-section { border-top: 1px solid rgba(167,169,172,0.16); }
+    .season-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(167,169,172,0.22);
+      border: 1px solid rgba(167,169,172,0.22);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .ss-stat { background: var(--card); padding: 20px 22px; }
+    .ss-val {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      line-height: 1;
+      color: var(--white);
+    }
+    .ss-val.red { color: var(--red); }
+    .ss-lbl {
+      margin-top: 8px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--silver-mute);
+    }
+    .standings { min-width: 0; }
+    .standings th:nth-child(n+3), .standings td:nth-child(n+3) { text-align: right; }
+    .standings td { font-variant-numeric: tabular-nums; }
+    .standings tr.us td { background: var(--card); color: var(--white); font-weight: 700; }
+    .standings tr.us td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+    .standings .pts { font-family: Arial, sans-serif; font-weight: 900; color: var(--white); }
+    .standings tr.us .pts { color: var(--red); }
+    .standings-note { margin-top: 14px; font-size: 0.74rem; color: var(--silver-mute); line-height: 1.6; }
+    .season-panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .sp-panel {
+      background: var(--card);
+      border: 1px solid rgba(167,169,172,0.22);
+      border-radius: 4px;
+      padding: 24px 26px;
+    }
+    .sp-panel .eyebrow { margin-bottom: 0; }
+    .sp-title {
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin: 10px 0 14px;
+    }
+    .sp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .sp-row:last-child { border-bottom: 0; }
+    .sp-div {
+      width: 48px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--silver-mute);
+    }
+    .sp-rank {
+      width: 56px;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
+      font-size: 1.3rem;
+      color: var(--white);
+    }
+    .sp-rank.top { color: var(--red); }
+    .sp-x { flex: 1; text-align: right; font-size: 0.8rem; color: var(--silver); font-variant-numeric: tabular-nums; }
+    .sp-name { color: var(--white); font-weight: 700; font-size: 0.9rem; }
+    .sp-name small {
+      display: block;
+      margin-top: 3px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--silver-mute);
+    }
+    .sp-rec { font-size: 0.8rem; color: var(--silver); white-space: nowrap; font-variant-numeric: tabular-nums; }
 
     /* ── ROSTER SECTION ──────────────────────────────────────────── */
     .bracket-grid {
@@ -858,6 +953,10 @@
       .scoreboard { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
       .sb-team.right { text-align: left; }
       .dv-lineup span { min-width: 0; margin-right: 8px; }
+      .season-stats { grid-template-columns: 1fr 1fr; }
+      .standings .hide-sm { display: none; }
+      .season-panels { grid-template-columns: 1fr; }
+      .sp-panel { padding: 20px; }
     }
     @media (max-width: 520px) {
       .nav-wordmark { display: none; }
@@ -891,8 +990,343 @@
     </div>
   </header>
 
+  <!-- SEASON -->
+  <section class="section results-section" id="standings">
+    <div class="wrap">
+      <div class="eyebrow">ICL Fall 2026 &middot; After Week 3</div>
+      <h2 class="section-h2">2&ndash;1.<br>Second in the city.</h2>
+      <p class="section-lead">Three Sundays in, the All Blacks sit 2nd of 6 clubs on 26 club points, with two regular-season match days left before championship weekend.</p>
+
+      <div class="season-stats">
+        <div class="ss-stat"><div class="ss-val red">2&ndash;1</div><div class="ss-lbl">Match record</div></div>
+        <div class="ss-stat"><div class="ss-val">26</div><div class="ss-lbl">Club points</div></div>
+        <div class="ss-stat"><div class="ss-val">2nd</div><div class="ss-lbl">Of 6 clubs</div></div>
+        <div class="ss-stat"><div class="ss-val">48&ndash;42</div><div class="ss-lbl">Games won&ndash;lost</div></div>
+      </div>
+
+      <div class="gwrap">
+        <table class="gtable standings">
+          <thead><tr><th>#</th><th>Club</th><th>W&ndash;L</th><th class="hide-sm">Games</th><th>Pts</th></tr></thead>
+          <tbody>
+              <tr><td class="gnum">1</td><td>PKLYN</td><td>3&ndash;0</td><td class="hide-sm">63&ndash;27</td><td class="pts">39</td></tr>
+              <tr class="us"><td class="gnum">2</td><td>HKPC All Blacks</td><td>2&ndash;1</td><td class="hide-sm">48&ndash;42</td><td class="pts">26</td></tr>
+              <tr><td class="gnum">3</td><td>Red Hook</td><td>1&ndash;2</td><td class="hide-sm">50&ndash;40</td><td class="pts">24</td></tr>
+              <tr><td class="gnum">4</td><td>Gotham Pickleball</td><td>2&ndash;1</td><td class="hide-sm">46&ndash;44</td><td class="pts">21</td></tr>
+              <tr><td class="gnum">5</td><td>Life Time Penn</td><td>1&ndash;2</td><td class="hide-sm">41&ndash;49</td><td class="pts">17</td></tr>
+              <tr><td class="gnum">6</td><td>Brooklyn Pickleball</td><td>0&ndash;3</td><td class="hide-sm">22&ndash;68</td><td class="pts">2.5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="standings-note">Club points per division: win 3 &middot; sweep 4 &middot; tie 1 (+&frac12; to the side ahead on points) &middot; swept &minus;1.</p>
+
+      <div class="season-panels">
+        <div class="sp-panel">
+          <div class="eyebrow">Where we rank</div>
+          <h3 class="sp-title">By division</h3>
+          <div class="sp-row"><span class="sp-div">D14</span><span class="sp-rank top">1st</span><span class="sp-x">14&ndash;4 in games &middot; +85</span></div>
+          <div class="sp-row"><span class="sp-div">D13</span><span class="sp-rank">3rd</span><span class="sp-x">11&ndash;7 &middot; +23</span></div>
+          <div class="sp-row"><span class="sp-div">D12</span><span class="sp-rank">5th</span><span class="sp-x">6&ndash;12 &middot; &minus;26</span></div>
+          <div class="sp-row"><span class="sp-div">D11</span><span class="sp-rank top">2nd</span><span class="sp-x">11&ndash;7 &middot; +37</span></div>
+          <div class="sp-row"><span class="sp-div">D10</span><span class="sp-rank">5th</span><span class="sp-x">6&ndash;12 &middot; &minus;50</span></div>
+        </div>
+        <div class="sp-panel">
+          <div class="eyebrow">Game record &middot; point differential</div>
+          <h3 class="sp-title">Leading the way</h3>
+          <div class="sp-row"><div class="sp-name">Peter Lehv<small>D14 &middot; #1 in the league</small></div><div class="sp-rec">10&ndash;2 &middot; +65</div></div>
+          <div class="sp-row"><div class="sp-name">Alan Ma<small>D14 &middot; #2 in the league</small></div><div class="sp-rec">10&ndash;2 &middot; +63</div></div>
+          <div class="sp-row"><div class="sp-name">Brigitte Wu<small>D14</small></div><div class="sp-rec">6&ndash;2 &middot; +42</div></div>
+          <div class="sp-row"><div class="sp-name">Zaman Ahmed<small>D11 &middot; 4&ndash;0 debut, 44&ndash;5 in points</small></div><div class="sp-rec">4&ndash;0 &middot; +39</div></div>
+          <div class="sp-row"><div class="sp-name">Kaitlyn Zheng<small>D13</small></div><div class="sp-rec">8&ndash;4 &middot; +31</div></div>
+          <div class="sp-row"><div class="sp-name">Martin Pico<small>D11</small></div><div class="sp-rec">8&ndash;4 &middot; +29</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- RESULTS -->
   <section class="section results-section" id="results">
+    <div class="wrap">
+      <div class="eyebrow">ICL Match Day 3 &middot; Oct 18</div>
+      <h2 class="section-h2">Home to Life Time Penn.<br>Won 11&ndash;3.5.</h2>
+      <p class="section-lead">Back on home courts, the All Blacks won D14 and D13, swept D11 6&ndash;0 and split D10 3&ndash;3 to take it 11&ndash;3.5 on club points, 19 games to 11. Martin Pico, Zaman Ahmed, Ashley Micallef and Kaitlyn Zheng all went 4&ndash;0.</p>
+
+      <div class="scoreboard">
+        <div class="sb-team">
+          <div class="sb-name">HKPC All Blacks</div>
+          <div class="sb-meta">Home &middot; A Team</div>
+        </div>
+        <div class="sb-score"><span class="sb-win">11</span><span class="sb-dash">&ndash;</span><span>3.5</span></div>
+        <div class="sb-team right">
+          <div class="sb-name">Life Time Penn</div>
+          <div class="sb-meta">Away &middot; A Team</div>
+        </div>
+      </div>
+      <p class="sb-sub">Club points &middot; Divisions <b>3&ndash;1&ndash;1</b> &middot; Games <b>19&ndash;11</b></p>
+      <p class="sb-when">Sun, Oct 18, 2026 &middot; HKPC, Hell&rsquo;s Kitchen</p>
+
+      <div class="div-strip">
+        <div class="div-chip won"><span class="dc-lbl">D14/D1</span><span class="dc-score">4&ndash;2</span></div>
+        <div class="div-chip won"><span class="dc-lbl">D13/D2</span><span class="dc-score">5&ndash;1</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D12/D3</span><span class="dc-score">1&ndash;5</span></div>
+        <div class="div-chip won"><span class="dc-lbl">D11/D4</span><span class="dc-score">6&ndash;0</span></div>
+        <div class="div-chip tie"><span class="dc-lbl">D10/D5</span><span class="dc-score">3&ndash;3</span></div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D14/D1</div>
+          <div class="dv-points">All Blacks <b>4</b> &ndash; <b>2</b> Life Time</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Laura Zhang &middot; Alan Ma &middot; Peter Lehv</p>
+        <p class="dv-lineup"><span>Life Time</span>Ethan Lefkowitz &middot; Joe Humann &middot; Mia Yu</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Life Time pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Alan Ma / Peter Lehv</td><td class="gs">11&ndash;2</td><td>Joe Humann / Ethan Lefkowitz</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Alan Ma / Laura Zhang</td><td class="gs">11&ndash;8</td><td>Joe Humann / Mia Yu</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Peter Lehv / Laura Zhang</td><td class="gs">8&ndash;11</td><td>Ethan Lefkowitz / Mia Yu</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Alan Ma / Peter Lehv</td><td class="gs">11&ndash;2</td><td>Joe Humann / Ethan Lefkowitz</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Alan Ma / Laura Zhang</td><td class="gs">9&ndash;11</td><td>Joe Humann / Mia Yu</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Peter Lehv / Laura Zhang</td><td class="gs">12&ndash;10</td><td>Ethan Lefkowitz / Mia Yu</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D13/D2</div>
+          <div class="dv-points">All Blacks <b>5</b> &ndash; <b>1</b> Life Time</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Ken Levy &middot; Drew Semler &middot; Kaitlyn Zheng</p>
+        <p class="dv-lineup"><span>Life Time</span>Ronin Sharma &middot; Sahana Deepak &middot; Sahil Lalani</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Life Time pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Drew Semler / Ken Levy</td><td class="gs">4&ndash;11</td><td>Ronin Sharma / Sahil Lalani</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">11&ndash;6</td><td>Ronin Sharma / Sahana Deepak</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Ken Levy / Kaitlyn Zheng</td><td class="gs">15&ndash;13</td><td>Sahil Lalani / Sahana Deepak</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Drew Semler / Ken Levy</td><td class="gs">11&ndash;9</td><td>Ronin Sharma / Sahil Lalani</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">11&ndash;1</td><td>Ronin Sharma / Sahana Deepak</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Ken Levy / Kaitlyn Zheng</td><td class="gs">11&ndash;2</td><td>Sahil Lalani / Sahana Deepak</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D12/D3</div>
+          <div class="dv-points">All Blacks <b>1</b> &ndash; <b>5</b> Life Time</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Michael Shaw &middot; Olivia Iacono &middot; Clay Schubiner</p>
+        <p class="dv-lineup"><span>Life Time</span>Danny Li &middot; Alexander Lee &middot; Anisha Garodia</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Life Time pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Michael Shaw / Clay Schubiner</td><td class="gs">4&ndash;11</td><td>Alexander Lee / Danny Li</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Michael Shaw / Olivia Iacono</td><td class="gs">11&ndash;8</td><td>Alexander Lee / Anisha Garodia</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Clay Schubiner / Olivia Iacono</td><td class="gs">5&ndash;11</td><td>Danny Li / Anisha Garodia</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Clay Schubiner / Michael Shaw</td><td class="gs">11&ndash;13</td><td>Alexander Lee / Danny Li</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Clay Schubiner / Olivia Iacono</td><td class="gs">5&ndash;11</td><td>Alexander Lee / Anisha Garodia</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Michael Shaw / Olivia Iacono</td><td class="gs">8&ndash;11</td><td>Danny Li / Anisha Garodia</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D11/D4</div>
+          <div class="dv-points">All Blacks <b>6</b> &ndash; <b>0</b> Life Time</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Zaman Ahmed &middot; Ashley Micallef &middot; Martin Pico</p>
+        <p class="dv-lineup"><span>Life Time</span>Samuel Folledo &middot; Sayuri Katz &middot; Moonis Javed</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Life Time pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Martin Pico / Zaman Ahmed</td><td class="gs">11&ndash;1</td><td>Samuel Folledo / Moonis Javed</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Martin Pico / Ashley Micallef</td><td class="gs">13&ndash;11</td><td>Samuel Folledo / Sayuri Katz</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Zaman Ahmed / Ashley Micallef</td><td class="gs">11&ndash;1</td><td>Moonis Javed / Sayuri Katz</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Zaman Ahmed / Martin Pico</td><td class="gs">11&ndash;1</td><td>Samuel Folledo / Moonis Javed</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Zaman Ahmed / Ashley Micallef</td><td class="gs">11&ndash;2</td><td>Samuel Folledo / Sayuri Katz</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Martin Pico / Ashley Micallef</td><td class="gs">11&ndash;4</td><td>Moonis Javed / Sayuri Katz</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D10/D5</div>
+          <div class="dv-points">All Blacks <b>3</b> &ndash; <b>3</b> Life Time</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Thomas Chu &middot; Jason Yeoun &middot; Meredith Brunette</p>
+        <p class="dv-lineup"><span>Life Time</span>Kyle Hiers &middot; Abishek Sethuraman &middot; Laura Mul</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>Life Time pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Jason Yeoun / Thomas Chu</td><td class="gs">2&ndash;11</td><td>Kyle Hiers / Abishek Sethuraman</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Jason Yeoun / Meredith Brunette</td><td class="gs">11&ndash;2</td><td>Kyle Hiers / Laura Mul</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Thomas Chu / Meredith Brunette</td><td class="gs">3&ndash;11</td><td>Abishek Sethuraman / Laura Mul</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Jason Yeoun / Thomas Chu</td><td class="gs">7&ndash;11</td><td>Kyle Hiers / Abishek Sethuraman</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Jason Yeoun / Meredith Brunette</td><td class="gs">11&ndash;3</td><td>Kyle Hiers / Laura Mul</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Thomas Chu / Meredith Brunette</td><td class="gs">12&ndash;10</td><td>Abishek Sethuraman / Laura Mul</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section results-section">
+    <div class="wrap">
+      <div class="eyebrow">ICL Match Day 2 &middot; Oct 4</div>
+      <h2 class="section-h2">Home to PKLYN.<br>Lost 3&ndash;12.</h2>
+      <p class="section-lead">PKLYN came to Hell&rsquo;s Kitchen and took four of the five divisions, 3&ndash;12 on club points and 11 games to 19. D14 held the line at 5&ndash;1, with Alan Ma unbeaten at 4&ndash;0.</p>
+
+      <div class="scoreboard">
+        <div class="sb-team">
+          <div class="sb-name">HKPC All Blacks</div>
+          <div class="sb-meta">Home &middot; A Team</div>
+        </div>
+        <div class="sb-score"><span>3</span><span class="sb-dash">&ndash;</span><span class="sb-win">12</span></div>
+        <div class="sb-team right">
+          <div class="sb-name">PKLYN</div>
+          <div class="sb-meta">Away &middot; A Team</div>
+        </div>
+      </div>
+      <p class="sb-sub">Club points &middot; Divisions <b>1&ndash;4</b> &middot; Games <b>11&ndash;19</b></p>
+      <p class="sb-when">Sun, Oct 4, 2026 &middot; HKPC, Hell&rsquo;s Kitchen</p>
+
+      <div class="div-strip">
+        <div class="div-chip won"><span class="dc-lbl">D14/D1</span><span class="dc-score">5&ndash;1</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D13/D2</span><span class="dc-score">2&ndash;4</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D12/D3</span><span class="dc-score">1&ndash;5</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D11/D4</span><span class="dc-score">1&ndash;5</span></div>
+        <div class="div-chip lost"><span class="dc-lbl">D10/D5</span><span class="dc-score">2&ndash;4</span></div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D14/D1</div>
+          <div class="dv-points">All Blacks <b>5</b> &ndash; <b>1</b> PKLYN</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Alan Ma &middot; Brigitte Wu &middot; Peter Lehv</p>
+        <p class="dv-lineup"><span>PKLYN</span>Christina Li &middot; Amol Pandit &middot; Conor Casey</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>PKLYN pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="w"><td class="gnum">1</td><td>Peter Lehv / Alan Ma</td><td class="gs">11&ndash;2</td><td>Amol Pandit / Conor Casey</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Alan Ma / Brigitte Wu</td><td class="gs">11&ndash;5</td><td>Conor Casey / Christina Li</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Peter Lehv / Brigitte Wu</td><td class="gs">6&ndash;11</td><td>Amol Pandit / Christina Li</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Peter Lehv / Alan Ma</td><td class="gs">11&ndash;4</td><td>Amol Pandit / Conor Casey</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">5</td><td>Alan Ma / Brigitte Wu</td><td class="gs">11&ndash;7</td><td>Conor Casey / Christina Li</td><td class="res">W</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Peter Lehv / Brigitte Wu</td><td class="gs">11&ndash;3</td><td>Amol Pandit / Christina Li</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D13/D2</div>
+          <div class="dv-points">All Blacks <b>2</b> &ndash; <b>4</b> PKLYN</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Drew Semler &middot; Ken Levy &middot; Kaitlyn Zheng</p>
+        <p class="dv-lineup"><span>PKLYN</span>Marco Andre Lorenz &middot; Jenny Kelemen &middot; Ryan Baird</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>PKLYN pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Drew Semler / Ken Levy</td><td class="gs">3&ndash;11</td><td>Ryan Baird / Marco Andre Lorenz</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">2</td><td>Ken Levy / Kaitlyn Zheng</td><td class="gs">6&ndash;11</td><td>Ryan Baird / Jenny Kelemen</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">11&ndash;9</td><td>Marco Andre Lorenz / Jenny Kelemen</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Drew Semler / Ken Levy</td><td class="gs">5&ndash;11</td><td>Ryan Baird / Marco Andre Lorenz</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Ken Levy / Kaitlyn Zheng</td><td class="gs">10&ndash;12</td><td>Ryan Baird / Jenny Kelemen</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Drew Semler / Kaitlyn Zheng</td><td class="gs">11&ndash;3</td><td>Marco Andre Lorenz / Jenny Kelemen</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D12/D3</div>
+          <div class="dv-points">All Blacks <b>1</b> &ndash; <b>5</b> PKLYN</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Ashley Micallef &middot; Michael Shaw &middot; Clay Schubiner</p>
+        <p class="dv-lineup"><span>PKLYN</span>Elizabeth Pattison &middot; James Monohan &middot; Rahul Somani</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>PKLYN pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Clay Schubiner / Michael Shaw</td><td class="gs">8&ndash;11</td><td>James Monohan / Rahul Somani</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">2</td><td>Michael Shaw / Ashley Micallef</td><td class="gs">7&ndash;11</td><td>James Monohan / Elizabeth Pattison</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Clay Schubiner / Ashley Micallef</td><td class="gs">1&ndash;11</td><td>Rahul Somani / Elizabeth Pattison</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">4</td><td>Clay Schubiner / Michael Shaw</td><td class="gs">11&ndash;5</td><td>James Monohan / Rahul Somani</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Clay Schubiner / Ashley Micallef</td><td class="gs">5&ndash;11</td><td>James Monohan / Elizabeth Pattison</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Michael Shaw / Ashley Micallef</td><td class="gs">6&ndash;11</td><td>Rahul Somani / Elizabeth Pattison</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D11/D4</div>
+          <div class="dv-points">All Blacks <b>1</b> &ndash; <b>5</b> PKLYN</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Martin Pico &middot; Jason Yeoun &middot; Erika Lobo</p>
+        <p class="dv-lineup"><span>PKLYN</span>Aris Agdere &middot; Doug Mackay &middot; Christina d&rsquo;Ecclesiis</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>PKLYN pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Martin Pico / Jason Yeoun</td><td class="gs">7&ndash;11</td><td>Aris Agdere / Doug Mackay</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">2</td><td>Jason Yeoun / Erika Lobo</td><td class="gs">11&ndash;9</td><td>Aris Agdere / Christina d&rsquo;Ecclesiis</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">3</td><td>Martin Pico / Erika Lobo</td><td class="gs">6&ndash;11</td><td>Doug Mackay / Christina d&rsquo;Ecclesiis</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Martin Pico / Jason Yeoun</td><td class="gs">3&ndash;11</td><td>Aris Agdere / Doug Mackay</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Jason Yeoun / Erika Lobo</td><td class="gs">6&ndash;11</td><td>Aris Agdere / Christina d&rsquo;Ecclesiis</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">6</td><td>Martin Pico / Erika Lobo</td><td class="gs">6&ndash;11</td><td>Doug Mackay / Christina d&rsquo;Ecclesiis</td><td class="res">L</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="division">
+        <div class="dv-head">
+          <div class="dv-label">D10/D5</div>
+          <div class="dv-points">All Blacks <b>2</b> &ndash; <b>4</b> PKLYN</div>
+        </div>
+        <p class="dv-lineup"><span>All Blacks</span>Qaisar Hasan &middot; Raymond Ng &middot; Nisha Chatwani</p>
+        <p class="dv-lineup"><span>PKLYN</span>Zack Goldberg &middot; Michelle Kanaley &middot; Madison Jordan</p>
+        <div class="gwrap">
+          <table class="gtable">
+            <thead><tr><th>Game</th><th>All Blacks pair</th><th>Score</th><th>PKLYN pair</th><th></th></tr></thead>
+            <tbody>
+              <tr class="l"><td class="gnum">1</td><td>Qaisar Hasan / Raymond Ng</td><td class="gs">1&ndash;11</td><td>Zack Goldberg / Madison Jordan</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">2</td><td>Raymond Ng / Nisha Chatwani</td><td class="gs">10&ndash;12</td><td>Madison Jordan / Michelle Kanaley</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">3</td><td>Qaisar Hasan / Nisha Chatwani</td><td class="gs">11&ndash;8</td><td>Zack Goldberg / Michelle Kanaley</td><td class="res">W</td></tr>
+              <tr class="l"><td class="gnum">4</td><td>Qaisar Hasan / Raymond Ng</td><td class="gs">5&ndash;11</td><td>Zack Goldberg / Madison Jordan</td><td class="res">L</td></tr>
+              <tr class="l"><td class="gnum">5</td><td>Raymond Ng / Nisha Chatwani</td><td class="gs">6&ndash;11</td><td>Madison Jordan / Michelle Kanaley</td><td class="res">L</td></tr>
+              <tr class="w"><td class="gnum">6</td><td>Qaisar Hasan / Nisha Chatwani</td><td class="gs">11&ndash;4</td><td>Zack Goldberg / Michelle Kanaley</td><td class="res">W</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section results-section">
     <div class="wrap">
       <div class="eyebrow">ICL Match Day 1 &middot; Sep 27</div>
       <h2 class="section-h2">Away at Gotham.<br>Won 12&ndash;3.</h2>
@@ -1037,7 +1471,7 @@
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand"><img src="images/allblacks/logo-lockup-silver.png" alt="HKPC All Blacks"></div>
-      <div class="footer-meta">Est. 2026 · Hell's Kitchen, Manhattan · 2–0</div>
+      <div class="footer-meta">Est. 2026 · Hell's Kitchen, Manhattan · 2–1</div>
     </div>
   </footer>
 
